@@ -3,7 +3,7 @@
 
 import csv
 print 'h'
-print 28 * 19
+print 28 * 18
 with open('./result.csv','r') as f:
     print "hello"
     cv = csv.reader(f)

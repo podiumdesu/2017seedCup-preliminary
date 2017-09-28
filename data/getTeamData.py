@@ -17,8 +17,8 @@ with open('teamData.csv','rb') as f:
     for line in cv:     #line是个list
         with open('./result.csv', 'a') as fr:
             if (int(line[0]) == team):
-                for x in line:
-                    fr.write(x + ',')
+                for x in range(1,19):
+                    fr.write(line[x] + ',')
                 flag = flag + 1
                 #print flag
             else:
@@ -28,15 +28,15 @@ with open('teamData.csv','rb') as f:
                 print left
                 if (left > 0):
                     for i in range(0, left - 1):
-                        for j in range(0, 19):
+                        for j in range(0, 18):
                             fr.write('0,')
-                    for j in range(0,18):
+                    for j in range(0,17):
                         fr.write('0,')
                     fr.write('0')
 
                 fr.write('\n')
-                for x in line:
-                    fr.write(x + ',')
+                for x in range(1,19):
+                    fr.write(line[x] + ',')
                 flag = 2
                 team = team + 1
             if (count == all_lines):
@@ -44,9 +44,9 @@ with open('teamData.csv','rb') as f:
                 left = 29 - flag
                 print left
                 for i in range(0, left - 1):   # for last '0'
-                    for j in range(0, 19):
+                    for j in range(0, 18):
                         fr.write('0,')
-                for j in range(0,18):
+                for j in range(0,17):
                     fr.write('0,')
                 fr.write('0')
 
